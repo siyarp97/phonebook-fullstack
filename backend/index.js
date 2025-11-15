@@ -1,10 +1,11 @@
-import axios from "axios";
+
 const express = require('express')
 const app = express()
 
 app.use(express.static('dist'))
 
-const getAll = () => {
-    const req = axios.get('/')
-    return req.then(res => res.data)
-}
+app.get("/api", (req,res) => {
+    res.json({"data":"1"})
+})
+
+app.listen(8080, (no) => {console.log(`App running on ${8080}`)})
